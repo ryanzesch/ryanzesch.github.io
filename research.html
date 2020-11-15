@@ -18,7 +18,22 @@
    <style>
        .bg {
            background-color: #ABD2D6;
-           }
+        }
+        .block {
+            border-radius: 25px;
+            transition: background-color .5s;
+        }
+        .block:hover {
+            background-color: #97B9BD
+        }
+        a.nostyle:link {
+            text-decoration: inherit;
+            color: inherit;
+        }
+        a.nostyle:visited {
+            text-decoration: inherit;
+            color: inherit;
+        }
    </style>
    
 </head>
@@ -26,28 +41,37 @@
 <body class="bg">
     <div id="header"></div>
 
-    <div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p> 
-    </div>
-    
+
     <div class="container">
+
+    <h1 class="display-3">Research Interests</h1>
+    
     <div class="row">
-        <div class="col-sm-4">
-        <h3>Column 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        
+        
+        <div class="col-sm-6 block">
+            <a class="nostyle" href="T2Trees.html">
+        <h3>Graph Theory</h3>
+        <p>A common question in graph theory is to ask how many copies of one type of graph can appear within another.
+            For my senior project, I researched disjoint spanning tree packings in almost balanced bipartite graphs.
+            <br>
+            Learn more
+        </p>   
+        </a>
         </div>
-        <div class="col-sm-4">
+        
+        <div class="col-sm-6">
         <h3>Column 2</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
-        <div class="col-sm-4">
+
+        <div class="col-sm-6">
         <h3>Column 3</h3>        
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
+
     </div>
     </div>
 
