@@ -9,99 +9,48 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <link rel="stylesheet" href="styles.css">
+
   <script> 
-    $(function(){
-      $("#header").load("header.html"); 
-    });
+
+    var hasScrolled = false;
 
     document.addEventListener('scroll', function () {
         const bgspacer = document.getElementById("banner-spacer");
         const bgimg = document.getElementById("banner-bg");
         const bgname = document.getElementById("banner-name");
+        const arr = document.getElementById("arrow-img");
         rect = bgspacer.getBoundingClientRect();
         var h = window.innerHeight;
         bgimg.style.opacity = 1 - (h-rect.bottom)/(h);
         bgname.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 3);
+        arr.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 4);
+        hasScrolled = true;
     }, {
         passive: true
     });
 
+    function slideArrow() {
+        if (!hasScrolled) {
+            const arr = document.getElementById("arrow");
+            arr.style.animationPlayState = "running";
+        }
+    }
+    setTimeout(slideArrow, 3000);
+
    </script> 
-
-   <style>
-       .bg {
-           background-color: #ABD2D6;
-        }
-
-        .banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-position: center right;
-            background-repeat: no-repeat;
-            overflow: hidden;
-            height: 100vh; 
-            width: 100%; 
-            background-image: url("home_bg_1.png");
-            background-size: cover;
-        }
-
-        #banner-spacer {
-            height: 100vh; 
-            width: 100%;
-            display: inline-block;
-        }
-
-        #banner-name {
-            position: relative;
-            animation: mymove 3s;
-            animation-fill-mode: forwards;
-            padding-top: 10vh;
-            padding-left: 100px;
-            padding-right: 100px;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        #banner-name h1 {
-            font-size:10vw;
-        }
-
-        @media only screen and (max-width: 400px) {
-            #banner-name {
-                
-                text-align: center;
-                padding-left: 0px;
-                padding-right: 0px;
-            }
-
-            #banner-name h1 {
-                font-size:20vw;
-            }
-        }
-
-        .home-content {
-            background-color: #ABD2D6;
-        }
-
-        @keyframes mymove {
-            from {top: -100vh;}
-            to {top: 0px;}
-        }
-   </style>
    
 </head>
 
 <body class="bg">
-    <div id="header"></div>
 
     <div id="banner-bg" class="banner">
         <div id="banner-name"><h1 class="display-1">Ryan<br>Zesch</h1></div>
-
     </div>
 
     
     <div id="banner-spacer">
+        <div id="arrow"><img id="arrow-img" src="arrow.png" style="height: 10vh; width: auto;"></div>
     </div>
 
     <div style="height: 50vh;">
@@ -113,41 +62,69 @@
         <div class="row">
             <div class="col-sm-4">
             <img src="me.jpg" style="width:inherit; border-radius: 25px;">
-            <p>bio bio bio, about me blah blah blah</p>
+            <p> <b>Ryan Zesch</b> is a graduating senior at California Polytechnic State University, San Luis Obispo, 
+                who is double majoring in Computer Science and Mathematics. He recently completed a senior research 
+                project studying packing problems in graph theory, and is always ready for a new algorithm or field to 
+                dig into the details of. After excelling in two computer graphics classes, he has developed a passion 
+                for the field and is currently working on writing a ray tracer in C++, the output of which is seen above! 
+                He has experience working on large software systems, and is quick at learning 
+                the intricacies of complex code. When he is not programming or 
+                doing math, you can find him playing card games, making pottery, or playing guitar.</p>
             </div>
             <div class="col-sm-8">
                 
                 <h3 style="text-align: center;">
-                    Branding statement
+                    Computing professional, graphics programmer,  and mathematics enthusiast
                 </h3>
 
                 <p>Learn more about my projects, experience, and reseach interests</p>
 
                 <div class="row">
-                    <div class="col-md-4">
+
+                    <div class="col-lg-4">
+                        <a class="card" href="projects.html">
                         <h3>Projects</h3>
                         <p>Check out the latest projects I've been working on!</p>
-                        <a href="projects.html">link</a>
+                        <div style="text-align: right; width: 95%;">&#8594;</div>
+                        </a>
+
+                        <a class="card" href="research.html">
+                            <h3>Contact Me</h3>
+                            <p>I'm interested in a variety of research topics and am working towards
+                                publishing some results! Read more here.
+                            </p>
+                            <div style="text-align: right; width: 95%;">&#8594;</div>
+                        </a>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
+                        <a class="card" href="research.html">
                         <h3>Research</h3>
                         <p>I'm interested in a variety of research topics and am working towards
                             publishing some results! Read more here.
                         </p>
-                        <a href="research.html">link</a>
+                        <div style="text-align: right; width: 95%;">&#8594;</div>
+                        </a>
+
+                        <a class="card" href="projects.html">
+                            <h3>About</h3>
+                            <p>Check out the latest projects I've been working on!</p>
+                            <div style="text-align: right; width: 95%;">&#8594;</div>
+                            </a>
                         
                     </div>
 
-                    <div class="col-md-4">
-                        <h3>Experience</h3>
+                    <div class="col-lg-4">
+                        <a class="card" href="experience.html">
+                        <h3>Timeline</h3>
                         <p>Internships go brrrrr
                         </p>
-                        <a href="experience.html">link</a>
+                        <div style="text-align: right; width: 95%;">&#8594;</div>
+                        </a>
                     </div>
+                
+
                 </div>
-
-
 
             </div>
         </div>

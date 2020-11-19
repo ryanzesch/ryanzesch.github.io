@@ -1,0 +1,98 @@
+.bg {
+    background-color: #ABD2D6;
+ }
+
+ .banner {
+     position: fixed;
+     top: 0;
+     left: 0;
+     background-position: center right;
+     background-repeat: no-repeat;
+     overflow: hidden;
+     height: 100vh; 
+     width: 100%; 
+     background-image: url("home_bg_1.png");
+     background-size: cover;
+     transform: translate3d(0, 0, 0);
+ }
+
+ #banner-spacer {
+     height: 100vh; 
+     width: 100%;
+     display: inline-block;
+ }
+
+ #banner-name {
+     position: relative;
+     animation: namemove 3s;
+     animation-fill-mode: forwards;
+     padding-top: 10vh;
+     padding-left: 100px;
+     padding-right: 100px;
+     color: #ffffff;
+     text-align: left;
+ }
+
+ #banner-name h1 {
+     font-size:10vw;
+ }
+
+ @media only screen and (max-width: 400px) {
+     #banner-name {
+         
+         text-align: center;
+         padding-left: 0px;
+         padding-right: 0px;
+     }
+
+     #banner-name h1 {
+         font-size:20vw;
+     }
+ }
+
+ .home-content {
+     background-color: #ABD2D6;
+ }
+
+ @keyframes namemove {
+     from {top: -100vh;}
+     to {top: 0px;}
+ }
+
+ #arrow {
+     width: 100%;
+     position: absolute;
+     animation: arrowmove 3s;
+     animation-fill-mode: forwards;
+     padding-top: 10vh;
+     padding-left: 100px;
+     padding-right: 100px;
+     text-align: center;
+     animation-play-state: paused;
+     opacity: 0;
+ }
+
+ @keyframes arrowmove {
+     from {top: 50vh; opacity: 0;}
+     to {top: 70vh; opacity: 1;}
+ }
+
+ .card:link {
+     text-decoration: inherit;
+     color: inherit;
+ }
+ .card:visited {
+     text-decoration: inherit;
+     color: inherit;
+ }
+ .card {
+     background-color: #97B9BD;
+     transition: background-color .5s;
+     border-radius: 25px;
+     padding: 10px;
+     margin-bottom: 30px;
+ }
+ .card:hover {
+     background-color: #63BDC7;
+     transition: background-color .5s;
+ }
