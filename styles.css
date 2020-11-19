@@ -96,3 +96,21 @@
      background-color: #63BDC7;
      transition: background-color .5s;
  }
+
+ #header-item {
+    background-color: #ABD2D6; /* For browsers that do not support gradients */
+    background-image: linear-gradient(#789396, #ABD2D6);
+  }
+
+.header-item-link {
+    color: #000000 !important;
+
+  }
+.header-item-link:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+.header-item-link:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
