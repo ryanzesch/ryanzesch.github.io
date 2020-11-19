@@ -37,9 +37,8 @@
      font-size:10vw;
  }
 
- @media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 576px) {
      #banner-name {
-         
          text-align: center;
          padding-left: 0px;
          padding-right: 0px;
@@ -114,3 +113,4 @@
     text-decoration: inherit;
     color: inherit;
 }
+
