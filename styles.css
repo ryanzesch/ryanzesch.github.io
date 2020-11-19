@@ -90,6 +90,7 @@
      border-radius: 25px;
      padding: 10px;
      margin-bottom: 30px;
+     border-color: #97B9BD;
  }
  .card:hover {
      background-color: #63BDC7;

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ryan Zesch - Timeline</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+  <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+
+    $(function(){
+      $("#footer").load("footer.html"); 
+    });
+   </script> 
+
+   <style>
+     .card:before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 20px;
+      width: 0;
+      z-index: 1;
+      left: -10px;
+      border: medium solid #97B9BD;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #97B9BD transparent transparent;
+    }
+   </style>
+   
+</head>
+
+<body class="bg">
+    <div id="header"></div>
+
+    <div class="container">
+
+      <h1 class="display-3">Timeline</h1>
+
+    
+
+      <div class="col-12" style="border-style: none none none solid;">
+      
+        <div class="row">
+          <div class="col-sm-6 block">
+              <div class="card before" href="raytracer.html">
+                  <h3>Senior Project</h3>
+                  <p>2020-Present</p>   
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 block">
+            <div class="card" href="raytracer.html">
+              <h3>Mathematics Workshop Leader</h3>
+              <p>2019-Present
+              </p>   
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 block">
+                <div class="card before" href="raytracer.html">
+                    <h3>Northrop Grumman Software Intern</h3>
+                    <p>Summer 2020</p>   
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 block">
+              <div class="card before" href="raytracer.html">
+                  <h3>Physics Study Session Leader</h3>
+                  <p>2018-2019</p>   
+              </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-6 block">
+              <div class="card before" href="raytracer.html">
+                  <h3>Software Intern at Blubrry Podcasting</h3>
+                  <p>Summer 2019</p>   
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 block">
+              <div class="card before" href="raytracer.html">
+                  <h3>Undergraduate Research - Dynamical Systems</h3>
+                  <p>2018-2019</p>   
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 block">
+              <div class="card before" href="raytracer.html">
+                  <h3>Undergraduate Research - Pell Conics</h3>
+                  <p>Summer 2018</p>   
+              </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
