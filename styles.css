@@ -114,3 +114,8 @@
     color: inherit;
 }
 
+#footer {
+    background-color:#789396; /* For browsers that do not support gradients */
+    background-image: linear-gradient(#ABD2D6, #789396);
+    height: 40vh;
+}
