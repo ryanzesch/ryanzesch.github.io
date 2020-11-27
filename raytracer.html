@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ryan Zesch - Ray Tracing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+  <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+
+    $(function(){
+      $("#footer").load("footer.html"); 
+    });
+   </script> 
+
+   <style>
+        .card:hover {
+            background-color:#97B9BD;
+            border-color: #97B9BD;
+        }
+        .card-img-holder::after {
+            content: "";
+            display: block;
+            padding-bottom: 75%;
+        }
+        img {
+            padding: 3px;
+        }
+   </style>
+   
+</head>
+
+<body class="bg">
+    <div id="header"></div>
+
+    <div class="container">
+
+        <h1 class="display-3">Ray Tracer</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 block" style="margin:auto;">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>
+                            I wrote a ray tracer in C++ for an advanced rending course at California Polytechnic State University. 
+                            In implementing a ray tracer, I added support for emissive rectangles, multiple primitives, and various
+                            materials. On top of these required features, I added support for ray marched fractal generation, based
+                            on <i><a href="http://blog.hvidtfeldts.net/index.php/2011/06/distance-estimated-3d-fractals-part-i/">Syntopia's articles</a></i>.
+                            </p>
+                            <p>
+                            For my final project in this course, I implemented participating media in order to create effects of fog, clouds, and
+                            "god rays." I based my implementation on <i><a href="https://raytracing.github.io/books/RayTracingTheNextWeek.html">Ray Tracing: 
+                            The Next Week</a></i>, <i><a href="https://old.cescg.org/CESCG-2000/SMaierhofer/index.html">A Flexible Framework for 
+                            Volume Tracing</a></i>, and Wojciech Jarosz's thesis,
+                            <i><a href="https://cs.dartmouth.edu/wjarosz/publications/dissertation/">Efficient Monte Carlo Methods for Light Transport in Scattering Media</a></i>.
+                            Additionally, I implemented a bounding volume heiarchy in order to improve render times.
+                            </p>
+                            <p>
+                            Moving forward from this project, I hope to expand to include features such as more complex volume rendering, 
+                            a more robust bounding volume heiarchy, and more efficient parallelization. Additionally, I hope to port code to Optix once
+                            I aquire a more powerful graphics card.
+                            </p>
+                            <p>
+                            Below is a gallery of images generated I have generated with my ray tracer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 card-img-holder">
+                    <img src="bunny-in-smoke-1200x900-200spp-25dep-14782s.png">
+                </div>
+                <div class="col-sm-4 card-img-holder">
+                    <img src="83s-bvh-1230s-no-bvh-50spp-25depth.png">
+                </div>
+                <div class="col-sm-4 card-img-holder">
+                    <img src="skeleton-appreciation-1200x900-200spp-25dep-9517s-BVH-20026poly.png">
+                </div>
+                <div class="col-sm-4 card-img-holder">
+                    <img src="ghost-cat-1200x900-100spp-15dep-4149s.png">
+                </div>
+                <div class="col-sm-4 card-img-holder">
+                    <img src="bust.png">
+                </div>
+                <div class="col-sm-4 card-img-holder">
+                    <img src="StanfordNefertiti.png">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

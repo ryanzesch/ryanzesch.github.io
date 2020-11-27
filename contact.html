@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ryan Zesch - Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+  <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+
+    $(function(){
+      $("#footer").load("footer.html"); 
+    });
+   </script> 
+
+   <style>
+        .card-img-holder::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+        .card {
+            background-color: transparent;
+            border-color: transparent;
+            padding: 10px;
+            margin: 30px;
+            padding-bottom: 0px;
+        }
+   </style>
+   
+</head>
+
+<body class="bg">
+    <div id="header"></div>
+
+    <div class="container">
+
+    <h1 class="display-3">Contact</h1>
+    
+    <div class="row">
+        
+        <div class="col-sm-4 block">
+            <a class="card" href="https://github.com/ryanzesch">
+                <div class="card-img-holder">
+                    <img src="github.png" class="card-img">
+                </div>
+                <p style="text-align: center; padding-top: 10px;">github.com/ryanzesch</p>
+            </a>
+        </div>
+
+        <div class="col-sm-4 block">
+            <a class="card" href="https://www.linkedin.com/in/ryanzesch/">
+                <div class="card-img-holder">
+                    <img src="linkedin.png" class="card-img">
+                </div>
+                <p style="text-align: center; padding-top: 10px;">linkedin.com/in/ryanzesch</p>
+            </a>
+        </div>
+
+        <div class="col-sm-4 block">
+            <a class="card" href="mailto:ryan.zesch@gmail.com">
+                <div class="card-img-holder">
+                    <img src="email.png" class="card-img">
+                </div>
+                <p style="text-align: center; padding-top: 10px;">ryan.zesch@gmail.com</p>
+            </a>
+        </div>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
