@@ -95,7 +95,7 @@
  .card .card-body {
     padding: 10px;
  }
- .card:hover {
+ .card-h:hover {
      background-color: #63BDC7;
      border-color: #63BDC7;
      transition: background-color .5s;
@@ -105,10 +105,22 @@
      position: relative;
  }
 
-  .card-img-holder::after {
+  .card-img-holder-50::after {
     content: "";
     display: block;
     padding-bottom: 50%;
+  }
+
+  .card-img-holder-75::after {
+    content: "";
+    display: block;
+    padding-bottom: 75%;
+  }
+  
+  .card-img-holder-100::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
   }
 
   .card-img-holder img {
