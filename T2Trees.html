@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
+
   <script> 
     $(function(){
       $("#header").load("header.html"); 
@@ -21,13 +22,7 @@
       $("#footer").load("footer.html"); 
     });
    </script> 
-   
 
-   <style>
-       .bg {
-           background-color: #ABD2D6;
-           }
-   </style>
    
 </head>
 
@@ -36,11 +31,58 @@
 
     <div class="container">
 
-        <h1 class="display-3">T<sub>2</sub> Trees</h1>
+        <h1 class="display-3">T2 Trees</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 block" style="margin:auto;">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>
+                              For my senior research project at California Polytechnic State University, I studied a class of spanning trees
+                              and wrote proofs concerning criterion for their existanceand bounds for how many can be packed
+                              into a given graph.
+                            </p>
+                            <p class="no-margin">
+                              A T2 Tree is a certain type of spanning tree of an almost balanced bipartite graph. In particular, if a 
+                              bipartite graph G has n vertices in X and n+1 vertices in Y, then a T2 tree T on G is a spanning tree on
+                              G such that every vertex of the spanning tree in X is degree 2.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 card" style="background-color: transparent;border-color: transparent;">
+                  <div style="margin:auto;">
+                    <div class="card">
+                      <div class="card-img-holder card-img-holder-100">
+                        <img src="t2.png" class="card-img">
+                      </div>
+                      <div class="card-body">
+                      <p class="no-margin"> An example T2 tree (blue edges)
+                      </p>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 block" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="no-margin">
+                          I am actively working on this topic, so further details will be omitted here. I aim to publish my results
+                          in the 1st Annual Computer Science Conference for CSU Undergraduates (CSCSU 2021) - stay tuned for 
+                          further details!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
 
     </div>
 
     <div id="footer"></div>
-
 </body>
 </html>

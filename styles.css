@@ -116,7 +116,7 @@
     display: block;
     padding-bottom: 75%;
   }
-  
+
   .card-img-holder-100::after {
     content: "";
     display: block;
@@ -153,4 +153,8 @@
 #footer {
     background-color:#789396; /* For browsers that do not support gradients */
     background-image: linear-gradient(#ABD2D6, #789396);
+}
+
+.no-margin {
+    margin: 0;
 }
