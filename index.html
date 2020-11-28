@@ -43,6 +43,20 @@
     }
     setTimeout(slideArrow, 3000);
 
+    // Lazy load images
+    function ReLoadImages(){
+        $('img[data-lazysrc]').each( function(){
+            //* set the img src from data-src
+            $( this ).attr( 'src', $( this ).attr( 'data-lazysrc' ) );
+            }
+        );
+    }
+    document.addEventListener('readystatechange', event => {
+        if (event.target.readyState === "interactive") {  //or at "complete" if you want it to execute in the most last state of window.
+            ReLoadImages();
+        }
+    });
+
    </script> 
    
 </head>
@@ -73,7 +87,7 @@
         <div class="container">
         <div class="row">
             <div class="col-sm-4">
-            <img src="me.jpg" style="width:inherit; border-radius: 25px;">
+            <img data-lazysrc="me.jpg" style="width:inherit; border-radius: 25px;">
             <p> <b>Ryan Zesch</b> is a graduating senior at California Polytechnic State University, San Luis Obispo, 
                 who is double majoring in Computer Science and Mathematics. He recently completed a senior research 
                 project studying packing problems in graph theory, and is always ready for a new algorithm or field to 
@@ -97,7 +111,7 @@
                             <div style="text-align: right; width: 95%;">&#8594;</div>
                             </div>
                             <div class="card-img-holder  card-img-holder-50">
-                                <img src="cropped-bunny-in-smoke-1200x900-200spp-25dep-14782s.png" class="card-img">
+                                <img data-lazysrc="cropped-bunny-in-smoke-1200x900-200spp-25dep-14782s.png" class="card-img">
                             </div>
                         </a>
 
@@ -110,7 +124,7 @@
                             <div style="text-align: right; width: 95%;">&#8594;</div>
                             </div>
                             <div class="card-img-holder  card-img-holder-50">
-                                <img src="research_banner.png" class="card-img">
+                                <img data-lazysrc="research_banner.png" class="card-img">
                             </div>
                         </a>
 
@@ -127,7 +141,7 @@
                             <div style="text-align: right; width: 95%;">&#8594;</div>
                             </div>
                             <div class="card-img-holder  card-img-holder-50">
-                                <img src="time.png" class="card-img">
+                                <img data-lazysrc="time.png" class="card-img">
                             </div>
                         </a>
 
@@ -138,7 +152,7 @@
                             <div style="text-align: right; width: 95%;">&#8594;</div>
                             </div>
                             <div class="card-img-holder card-img-holder-50">
-                                <img src="i.png" class="card-img">
+                                <img data-lazysrc="i.png" class="card-img">
                             </div>
                         </a>
                         
@@ -153,7 +167,7 @@
                             <div style="text-align: right; width: 95%;">&#8594;</div>
                             </div>
                             <div class="card-img-holder card-img-holder-50">
-                                <img src="home_bg_1.png" class="card-img">
+                                <img data-lazysrc="home_bg_1.png" class="card-img">
                             </div>
                         </a>
                     </div>
