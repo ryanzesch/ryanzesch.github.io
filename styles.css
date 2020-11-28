@@ -158,3 +158,37 @@
 .no-margin {
     margin: 0;
 }
+
+.display-3 {
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: 20px;
+}
+
+.logo {
+    width: 120px; height: 120px; border-radius: 50%;
+    background-color:transparent;
+    transition: background-color .5s;
+
+}
+.logo:hover {
+    background-color:#789396;
+    transition: background-color .5s;
+}
+
+.underline-h {
+    display: inline-block;
+    text-align: center
+  }
+.underline-h::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: black;
+    transition: 300ms;
+    margin: auto;
+}
+.underline-h:hover::after {
+    width: 75%;
+}
