@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ryan Zesch - Ray Tracing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+
+
+  <script> 
+    $(function(){
+      $("#header").load("../header.html"); 
+    });
+
+    $(function(){
+      $("#footer").load("../footer.html"); 
+    });
+   </script> 
+
+   <style>
+        .card-img-holder img {
+            padding: 3px;
+        }
+   </style>
+   
+</head>
+
+<body class="bg">
+    <div id="header"></div>
+
+    <div class="container">
+
+        <h1 class="display-3">Gallery</h1>
+        <h1 class="display-3" style="font-size: 2.5rem; text-decoration: none;" >CPSC 645/VIZA 675 Geometric Modeling Course Project<br>by Ryan Zesch</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 block" style="margin:auto;">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>
+                            Below is a gallery of renders of ray traced deformable SDFs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="bunnyrt.png">
+                    <br/>
+                    <div style="text-align:center">
+                        A ray traced deformed bunny, rendered with 1024x1024 pixels and 100 rays per pixel in 6 hours, using a dense grid SDF representation.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="bunny_exact.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered using the exact learned SDF as the distance function.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="bunny_octree.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered using a sparse octree with trilinear interpolation between SDF sample points.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="bunny_grid.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered using a dense grid with trilinear interpolation between SDF sample points.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="bunny_cube.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered using as voxels of an octree.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="depth.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered as a depth map.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="normal.png">
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny rendered as a normal map.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
+                        <source src="levelSets.webm"/>
+                    </video>
+                    <br/>
+                    <div style="text-align:center">
+                        The first few learned level sets of the deformed bunny SDF.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
+                        <source src="bunnydef.webm"/>
+                    </video>
+                    <br/>
+                    <div style="text-align:center">
+                        The bunny continuously deforming between three training poses by linearly interpolating the input deformation code.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="dragon1_exact.png">
+                    <br/>
+                    <div style="text-align:center">
+                        A learned dragon in an undeformed pose.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="dragon2_exact.png">
+                    <br/>
+                    <div style="text-align:center">
+                        A learned dragon in a second pose, deformed to a training pose using the training pose's deformation code.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="dragon3_exact.png">
+                    <br/>
+                    <div style="text-align:center">
+                        A learned dragon in a third pose, deformed to a training pose using the training pose's deformation code.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
+                        <source src="barbend.webm"/>
+                    </video>
+                    <br/>
+                    <div style="text-align:center">
+                        A bar deforming between multiple training poses by interpolating the deformation code. The training deformations are as seen below.  <br/><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="Picture1.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="Picture2.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="Picture3.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="Picture4.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                    <img src="Picture5.jpg">
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
