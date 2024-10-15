@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="imSMPL: A Reimplementation of imGHUM Trained on SMPL-X Parameters">
+  <meta name="keywords" content="SMPL, SMPL-X, SDF, imGHUM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>imSMPL: A Reimplementation of imGHUM Trained on SMPL-X Parameters</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zesch.dev">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">imSMPL: A Reimplementation of imGHUM Trained on SMPL-X Pose Parameters</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zesch.dev">Ryan Zesch</a><!--<sup>1</sup>-->
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Texas A&M University</span>
+            <br>
+            <span class="author-block">CSCE-689 Final Project</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code - Coming Soon</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="publication-video" style="text-align: center;">
+      <img src="static/images/col.png" width="33%" height="auto">
+      <img src="static/images/dep.png" width="33%" height="auto" style="border-radius: 10%;">
+      <img src="static/images/nor.png" width="33%" height="auto">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">imSMPL</span> learns a posable SDF of the SMPL-X torso and arms.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified">
+          <p>
+            For my CSCE-689 finaly project, I implemented a neural signed distance field conditioned on the <a href="https://smpl-x.is.tue.mpg.de/">SMPL-X</a>
+            body model. This project is an adaption and implementation of <a href="https://github.com/google-research/google-research/blob/master/imghum/README.md">imGHUM</a>, 
+            which learns a signed distance field of the <a href="https://github.com/google-research/google-research/tree/master/ghum">GHUM</a> model, to SMPL-X.
+          </p>
+          <p>
+            In this project, I restricted to a simpler subproblem of learning the entire SMPL-X body as a signed distance
+            field. In particular, I train a network conditioned on the body pose parameters, and represent only the arms and
+            torso of the model.
+          </p>
+          <p>
+            In order to train this neural model, 100 animations from the <a href="https://amass.is.tue.mpg.de/">AMASS</a> dataset are used, sampling up to 200 poses per animaiton.
+            16k training data points are generated for each pose, of which half are sampled uniformly from the body surface.
+            The remaining points are sampled uniformly in space, or in a tight normal distribution arounf the body surface.
+            As in imGHUM, training losses serve to enforce the correct 0 level-set, correct surface normals, correct inside/outside labels,
+            and a gradient magnitude of 1 with respect to input coordinates.
+            Compared to imGHUM, I use a simple single MLP with no spatial input encoding, and train to convergence. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/3Vuzqb0gC30?si=y7HeO7QsHWjy9D0K"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <p>A Training Set Animation</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/seen1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <p>A Training Set Animation</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/seen2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <p>A Test Set Animation</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/unseen1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <p>A Test Set Animation</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/unseen2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <p>A Test Set Level Set</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/unseenlevel1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <p>A Test Set Level Set</p>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/unseenlevel2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Many thanks to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+            for providing this website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
