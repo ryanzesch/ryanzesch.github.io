@@ -30,13 +30,65 @@
 
     <div class="container">
 
-    <h1 class="display-3">Research Interests</h1>
+    <h1 class="display-3">Research</h1>
     
     <div class="row">
         
         
         <div class="col-sm-6 block">
-            <a class="card card-h" href="T2Trees.html">
+            <a class="card card-h" href="https://dl.acm.org/doi/10.1145/3610548.3618225">
+                <div class="card-body">
+
+                <h3>Neural Collision Fields for Triangle Primitives</h3>
+                <p>We present neural collision fields as an alternative to contact point sampling in physics simulations. Our approach is built on top of a novel smoothed integral formulation for the contact surface patches between two triangle meshes. By reformulating collisions as an integral, we avoid issues of sampling common to many collision-handling algorithms. Because the resulting integral is difficult to evaluate numerically, we store its solution in an integrated neural collision field — a 6D neural field in the space of triangle pair vertex coordinates. Our network generalizes well to new triangle meshes without retraining. We demonstrate the effectiveness of our method by implementing it as a constraint in a position-based dynamics framework and show that our neural formulation successfully handles collisions in practical simulations involving both volumetric and thin-shell geometries.
+                </p>   
+                <div style="text-align: right; width: 95%;">&#8594;</div>
+            </div>
+            <div class="card-img-holder card-img-holder-50">
+                <img src="tri_prim.jpg" class="card-img">
+            </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 block">
+            <a class="card card-h" href="https://link.springer.com/chapter/10.1007/978-3-031-61816-1_6">
+                <div class="card-body">
+
+                <h3>NBD-Tree: Neural Bounded Deformation Tree for Collision Culling of Deformable Objects</h3>
+                <p>We propose a novel machine learning-based approach for accelerating the broad phase of 3D collision detection for deformable objects. Our method, which we call the neural bounded deformation tree (NBD-Tree), allows us to cull away primitives for full-space deformable objects quickly. Unlike its classic, non-neural counterpart, the NBD-Tree is not limited to deformable objects that are constrained to work within the space of low-dimensional deformation modes, and instead works with an arbitrary set of deformations. With our approach, when the shape of the object changes at runtime, we use the low-dimensional deformation modes of the object only as the input to a neural network that calculates the necessary updates to the NBD-Tree. To further improve efficiency, we approximate these low-dimensional modes efficiently through clustering, which allows us to avoid going through every vertex of the mesh. We then rely on the network to overcome the potential errors stemming from these approximations. The NBD-Tree paves the way for interactive collision culling of large-scale, full-space deformable objects.
+                </p>   
+                <div style="text-align: right; width: 95%;">&#8594;</div>
+            </div>
+            <div class="card-img-holder card-img-holder-50">
+                <img src="nbd.webp" class="card-img">
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-6 block">
+            <a class="card card-h" href="https://arxiv.org/pdf/2202.02309">
+                <div class="card-body">
+
+                <h3>Neural Collision Detection for Deformable Objects</h3>
+                <p>We propose a neural network-based approach for collision detection with
+                    deformable objects. Unlike previous approaches based on bounding volume
+                    hierarchies, our neural approach does not require an update of the spatial
+                    data structure when the object deforms. Our network is trained on the
+                    reduced degrees of freedom of the object, so that we can use the same
+                    network to query for collisions even when the object deforms. Our approach
+                    is simple to use and implement, and it can readily be employed on the
+                    GPU. We demonstrate our approach with two concrete examples: a haptics
+                    application with a finite element mesh, and cloth simulation with a skinned
+                    character.
+                </p>   
+                <div style="text-align: right; width: 95%;">&#8594;</div>
+            </div>
+            <div class="card-img-holder card-img-holder-50">
+                <img src="sdf_coll.jpg" class="card-img">
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-6 block">
+            <a class="card card-h" href="https://scholarworks.calstate.edu/downloads/1c18dn24k">
                 <div class="card-body">
 
                 <h3>Spanning Trees</h3>
@@ -49,7 +101,8 @@
                 <img src="t2wide.png" class="card-img">
             </div>
             </a>
-
+        </div>
+        <!-- <div class="col-sm-6 block">
             <a class="card card-h" href="projects.html">
                 <div class="card-body">
 
@@ -64,7 +117,7 @@
                 <img src="cropped-bunny-in-smoke-1200x900-200spp-25dep-14782s.png" class="card-img">
             </div>
             </a>
-        </div>
+        </div> -->
         
         <div class="col-sm-6 block">
             <a class="card card-h" href="Curves__Conics_and_Cryptography__Oh_My.pdf">
