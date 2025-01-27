@@ -4,27 +4,84 @@
   <title>Ryan Zesch - Projects</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    .masonry-container {
+      position: relative;
+      margin: 0 auto;
+    }
 
+    .masonry-item {
+      position: absolute;
+      width: calc(50% - 8px); /* Two columns on desktop */
+      margin-bottom: 16px;
+    }
 
-  <script> 
-    $(function(){
-      $("#header").load("header.html"); 
+    @media (max-width: 768px) {
+      .masonry-item {
+        position: relative;
+        width: 100%; /* Full-width on mobile */
+        margin-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 768px) and (min-width: 576px) {
+  .masonry-item {
+    max-width: 100% !important; /* Override Bootstrap's col-sm-6 width */
+  }
+}
+  </style>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
     });
 
-    $(function(){
-      $("#footer").load("footer.html"); 
-    });
-   </script> 
-   
+    function masonryLayout() {
+      const container = document.getElementById("masonry-container");
+      const items = Array.from(container.children);
+
+      if (window.innerWidth <= 768) {
+        items.forEach((item) => {
+          item.style.position = "relative";
+          item.style.top = "";
+          item.style.left = "";
+          item.style.width = "100%";
+        });
+        container.style.height = "";
+        return;
+      }
+
+      const columnCount = 2;
+      const columnHeights = Array(columnCount).fill(0);
+      const columnWidth = container.offsetWidth / columnCount;
+
+      items.forEach((item) => {
+        const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+
+        item.style.position = "absolute";
+        item.style.top = `${columnHeights[shortestColumnIndex]}px`;
+        item.style.left = `${shortestColumnIndex * columnWidth}px`;
+        item.style.width = `${columnWidth - 16}px`;
+
+        columnHeights[shortestColumnIndex] += item.offsetHeight + 16;
+      });
+
+      container.style.position = "relative";
+      container.style.height = `${Math.max(...columnHeights)}px`;
+    }
+
+    window.addEventListener("load", masonryLayout);
+    window.addEventListener("resize", masonryLayout);
+  </script>
 </head>
-
 <body class="bg">
     <div id="header"></div>
 
@@ -32,10 +89,10 @@
 
     <h1 class="display-3">Projects</h1>
     
-    <div class="row">
+    <div id="masonry-container" class="masonry-container">
         
         
-        <div class="col-sm-6 block">
+        <div class="masonry-item col-sm-6 block">
             <a class="card card-h" href="imsmpl/imsmpl.html">
                 <div class="card-body">
                 <h3>imGHUM Implementation</h3>
@@ -49,7 +106,7 @@
             </a>
             
         </div>
-        <div class="col-sm-6 block">
+        <div class="masonry-item col-sm-6 block">
             <a class="card card-h" href="GeometricModeling/geometricmodeling.html">
                 <div class="card-body">
                 <h3>SDF Raytracer</h3>
@@ -63,7 +120,7 @@
             </a>
             
         </div>
-        <div class="col-sm-6 block">
+        <div class="masonry-item col-sm-6 block">
             <a class="card card-h" href="raytracer.html">
                 <div class="card-body">
                 <h3>Ray Tracer</h3>
@@ -78,7 +135,7 @@
             </a>
             
         </div>
-        <div class="col-sm-6 block">
+        <div class="masonry-item col-sm-6 block">
 
             <a class="card card-h" href="http://users.csc.calpoly.edu/~zwood/teaching/csc476/final20/lightS/">
                 <div class="card-body">
@@ -94,7 +151,7 @@
             </a>
         </div>
 
-        <div class="col-sm-6 block">
+        <div class="masonry-item col-sm-6 block">
 
             <a class="card card-h" href="index.html">
                 <div class="card-body">
