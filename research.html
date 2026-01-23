@@ -91,10 +91,19 @@
     <div id="masonry-container" class="masonry-container">
       <!-- Original Cards -->
       <div class="masonry-item col-sm-6 block">
-        <a class="card card-h" href="#" onClick="return false;">
+        <a class="card card-h" href="MultilayerGaussianGarments.pdf">
           <div class="card-body">
             <h3>Interactive Multilayer Gaussian Garments for Low-Cost Try-On</h3>
-            <p>Accepted to GI 2025 (Coming Soon)</p>
+            <p>GI 2025 (Best Graphics Paper Award)</p>
+            <p>Numerous recent works have utilized 3D Gaussian Splatting to represent high-fidelity digital avatars.
+However, none have enabled interactive multilayer Gaussian garments for virtual try-ons without relying on expensive hardware, such as a camera array and/or multiple GPUs.
+To enable affordable mix-and-match dressing - dressing 3D avatars with realistic and complex combinations of garments - it is crucial to handle the interactions between multiple layers of garments using consumer-level capturing hardware.
+To address this, we present a novel screenspace layer resolution method combined with physical simulation and Gaussian garments to enable realistic multilayer mix-and-match avatar dressing at interactive rates using low-cost hardware.
+As an offline process, we capture multiple static garments individually using only a single mobile camera on a static mannequin and then perform a dual reconstruction of Gaussians and simulation mesh.
+During runtime, these Gaussians are driven by a fast but simple physics simulator, whose output may contain inter-penetrations across garment layers.
+Our method fixes these in screenspace by rasterizing the simulation mesh from various camera views and culling the Gaussians that are skinned to unseen mesh triangles.
+We show the effectiveness of our approach by demonstrating mix-and-match dressing results at interactive rates using short-sleeves, long-sleeves, a fur vest, and a singlet. 
+Additionally, we showcase a webcam-based interactive try-on application to further illustrate the capabilities of our system.</p>
             <div style="text-align: right; width: 95%;">&#8594;</div>
           </div>
           <div class="card-img-holder card-img-holder-50">
@@ -104,10 +113,12 @@
       </div>
 
       <div class="masonry-item col-sm-6 block">
-        <a class="card card-h" href="#" onClick="return false;">
+        <a class="card card-h" href="https://arxiv.org/pdf/2402.10457">
           <div class="card-body">
             <h3>Learning-Augmented Search Data Structures</h3>
-            <p>Accepted to ICLR 2025 (Coming Soon)</p>
+            <p>Accepted to ICLR 2025</p>
+            <p>We study the integration of machine learning advice to improve upon traditional data structure designed for efficient search queries. Although there has been recent effort in improving the performance of binary search trees using machine learning advice, the resulting constructions nevertheless suffer from inherent weaknesses of binary search trees, such as complexity of maintaining balance across multiple updates and the inability to handle partially-ordered or high-dimensional datasets. For these reasons, we focus on skip lists and KD trees in this work. 
+Given access to a possibly erroneous oracle that outputs estimated fractional frequencies for search queries on a set of items, we construct skip lists and KD trees that provably provides the optimal expected search time, within nearly a factor of two. In fact, our learning-augmented skip lists and KD trees are still optimal up to a constant factor, even if the oracle is only accurate within a constant factor. We show that if the search queries follow the ubiquitous Zipfian distribution, then the expected search time for an item by our data structures is only a constant, independent of the total number n of items, i.e., O(1), whereas a traditional skip list or KD tree will have an expected search time of O(log n). We also demonstrate robustness by showing that our data structures achieves an expected search time that is within a constant factor of an oblivious skip list/KD tree construction even when the predictions are arbitrarily incorrect. Finally, we empirically show that our learning-augmented search data structures outperforms their corresponding traditional analogs on both synthetic and real-world datasets.</p>
             <div style="text-align: right; width: 95%;">&#8594;</div>
           </div>
           <div class="card-img-holder card-img-holder-50">
@@ -135,7 +146,7 @@
         <a class="card card-h" href="https://link.springer.com/chapter/10.1007/978-3-031-61816-1_6">
           <div class="card-body">
             <h3>NBD-Tree: Neural Bounded Deformation Tree for Collision Culling of Deformable Objects</h3>
-            <p>SDSC 2023</p>
+            <p>SDSC 2023 (Best Paper Award)</p>
             <p>We propose a novel machine learning-based approach for accelerating the broad phase of 3D collision detection for deformable objects. Our method, which we call the neural bounded deformation tree (NBD-Tree), allows us to cull away primitives for full-space deformable objects quickly. Unlike its classic, non-neural counterpart, the NBD-Tree is not limited to deformable objects that are constrained to work within the space of low-dimensional deformation modes, and instead works with an arbitrary set of deformations. With our approach, when the shape of the object changes at runtime, we use the low-dimensional deformation modes of the object only as the input to a neural network that calculates the necessary updates to the NBD-Tree. To further improve efficiency, we approximate these low-dimensional modes efficiently through clustering, which allows us to avoid going through every vertex of the mesh. We then rely on the network to overcome the potential errors stemming from these approximations. The NBD-Tree paves the way for interactive collision culling of large-scale, full-space deformable objects.
             </p>  
             <div style="text-align: right; width: 95%;">&#8594;</div>
