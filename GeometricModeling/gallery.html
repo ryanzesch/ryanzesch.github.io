@@ -9,17 +9,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 
 
   <script> 
     $(function(){
-      $("#header").load("../header.html"); 
+      $("#header").load("../partials/header.html"); 
     });
 
     $(function(){
-      $("#footer").load("../footer.html"); 
+      $("#footer").load("../partials/footer.html"); 
     });
    </script> 
 
@@ -55,8 +55,8 @@
             
             <div class="card">
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="bunnyrt.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/bunnyrt.png">
                     <br/>
                     <div style="text-align:center">
                         A ray traced deformed bunny, rendered with 1024x1024 pixels and 100 rays per pixel in 6 hours, using a dense grid SDF representation.  <br/><br/>
@@ -64,8 +64,8 @@
                 </div>
             
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="bunny_exact.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/bunny_exact.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered using the exact learned SDF as the distance function.  <br/><br/>
@@ -73,8 +73,8 @@
                 </div>
             
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="bunny_octree.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/bunny_octree.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered using a sparse octree with trilinear interpolation between SDF sample points.  <br/><br/>
@@ -82,8 +82,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="bunny_grid.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/bunny_grid.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered using a dense grid with trilinear interpolation between SDF sample points.  <br/><br/>
@@ -91,8 +91,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="bunny_cube.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/bunny_cube.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered using as voxels of an octree.  <br/><br/>
@@ -100,8 +100,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="depth.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/depth.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered as a depth map.  <br/><br/>
@@ -109,8 +109,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="normal.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/normal.png">
                     <br/>
                     <div style="text-align:center">
                         The bunny rendered as a normal map.  <br/><br/>
@@ -118,9 +118,9 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
                     <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
-                        <source src="levelSets.webm"/>
+                        <source src="assets/video/levelSets.webm"/>
                     </video>
                     <br/>
                     <div style="text-align:center">
@@ -129,9 +129,9 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
                     <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
-                        <source src="bunnydef.webm"/>
+                        <source src="assets/video/bunnydef.webm"/>
                     </video>
                     <br/>
                     <div style="text-align:center">
@@ -140,8 +140,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="dragon1_exact.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/dragon1_exact.png">
                     <br/>
                     <div style="text-align:center">
                         A learned dragon in an undeformed pose.  <br/><br/>
@@ -149,8 +149,8 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="dragon2_exact.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/dragon2_exact.png">
                     <br/>
                     <div style="text-align:center">
                         A learned dragon in a second pose, deformed to a training pose using the training pose's deformation code.  <br/><br/>
@@ -158,8 +158,8 @@
                 </div>
   
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="dragon3_exact.png">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/dragon3_exact.png">
                     <br/>
                     <div style="text-align:center">
                         A learned dragon in a third pose, deformed to a training pose using the training pose's deformation code.  <br/><br/>
@@ -167,9 +167,9 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
                     <video style="width: 35%; text-align:center;" class="tab" controls loop>Your browser does not support the &lt;video&gt; tag.
-                        <source src="barbend.webm"/>
+                        <source src="assets/video/barbend.webm"/>
                     </video>
                     <br/>
                     <div style="text-align:center">
@@ -178,28 +178,28 @@
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="Picture1.jpg">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/Picture1.jpg">
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="Picture2.jpg">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/Picture2.jpg">
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="Picture3.jpg">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/Picture3.jpg">
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="Picture4.jpg">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/Picture4.jpg">
                 </div>
 
                 <div class="card-body">
-                <div style="text-align:center" href="TAMU_GeomFinalProject.pdf">
-                    <img src="Picture5.jpg">
+                <div style="text-align:center" href="assets/docs/TAMU_GeomFinalProject.pdf">
+                    <img src="assets/img/Picture5.jpg">
                 </div>
             </div>
             

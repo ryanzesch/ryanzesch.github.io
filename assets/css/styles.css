@@ -11,7 +11,7 @@
      overflow: hidden;
      height: 100vh; 
      width: 100%; 
-     background-image: url("home_bg_1.png");
+     background-image: url("../img/home_bg_1.png");
      background-size: cover;
      transform: translate3d(0, 0, 0);
  }
