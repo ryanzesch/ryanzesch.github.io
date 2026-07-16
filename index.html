@@ -15,33 +15,34 @@
   <script> 
 
     $(function(){
+      $("#header").load("partials/header.html");
       $("#footer").load("partials/footer.html");
     });
 
-    var hasScrolled = false;
+    // var hasScrolled = false;
 
-    document.addEventListener('scroll', function () {
-        const bgspacer = document.getElementById("banner-spacer");
-        const bgimg = document.getElementById("banner-bg");
-        const bgname = document.getElementById("banner-name");
-        const arr = document.getElementById("arrow-img");
-        rect = bgspacer.getBoundingClientRect();
-        var h = window.innerHeight;
-        bgimg.style.opacity = 1 - (h-rect.bottom)/(h);
-        bgname.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 3);
-        arr.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 4);
-        hasScrolled = true;
-    }, {
-        passive: true
-    });
+    // document.addEventListener('scroll', function () {
+    //     const bgspacer = document.getElementById("banner-spacer");
+    //     const bgimg = document.getElementById("banner-bg");
+    //     const bgname = document.getElementById("banner-name");
+    //     const arr = document.getElementById("arrow-img");
+    //     rect = bgspacer.getBoundingClientRect();
+    //     var h = window.innerHeight;
+    //     bgimg.style.opacity = 1 - (h-rect.bottom)/(h);
+    //     bgname.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 3);
+    //     arr.style.opacity = Math.pow(1 - ((h-rect.bottom)/(h)), 4);
+    //     hasScrolled = true;
+    // }, {
+    //     passive: true
+    // });
 
-    function slideArrow() {
-        if (!hasScrolled) {
-            const arr = document.getElementById("arrow");
-            arr.style.animationPlayState = "running";
-        }
-    }
-    setTimeout(slideArrow, 3000);
+    // function slideArrow() {
+    //     if (!hasScrolled) {
+    //         const arr = document.getElementById("arrow");
+    //         arr.style.animationPlayState = "running";
+    //     }
+    // }
+    // setTimeout(slideArrow, 3000);
 
     // Lazy load images
     function ReLoadImages(){
@@ -63,16 +64,20 @@
 
 <body class="bg">
 
-    <div id="banner-bg" class="banner">
+    <!-- <div id="banner-bg" class="banner">
         <div id="banner-name"><h1 class="display-1">Ryan<br>Zesch</h1></div>
     </div>
 
     
     <div id="banner-spacer">
         <div id="arrow"><img id="arrow-img" src="assets/img/arrow.png" style="height: 10vh; width: auto;"></div>
-    </div>
+    </div> -->
 
-    <div style="height: 50vh;">
+    <!-- <div style="height: 50vh;">
+    </div> -->
+    
+    <div id="header"></div>
+    <div style="height: 5vh;">
     </div>
 
     
@@ -85,7 +90,7 @@
             <p> Hi, I'm <b>Ryan Zesch</b>! I am Computer Science PhD candidate at Texas A&M University. 
                 My research interests include
                 physics simulation of deformable objects, collision detection, and garment simulation, often with neural approaches.
-                I have completed internships at Amazon and NVIDIA, as well as international research in Japan through the NSF IRES preogram.
+                I have completed internships at Amazon and NVIDIA, as well as international research in Japan through the NSF IRES program.
                 I previously graduated summa cum laude from California Polytechnic State University, San Luis Obispo, 
                 with degrees in Mathematics and Computer Science.</p>
             </div>
