@@ -94,17 +94,11 @@
         <a class="card card-h" href="assets/docs/MultilayerGaussianGarments.pdf">
           <div class="card-body">
             <h3>Interactive Multilayer Gaussian Garments for Low-Cost Try-On</h3>
-            <p>GI 2025 (Best Graphics Paper Award)</p>
-            <p>Numerous recent works have utilized 3D Gaussian Splatting to represent high-fidelity digital avatars.
-However, none have enabled interactive multilayer Gaussian garments for virtual try-ons without relying on expensive hardware, such as a camera array and/or multiple GPUs.
-To enable affordable mix-and-match dressing - dressing 3D avatars with realistic and complex combinations of garments - it is crucial to handle the interactions between multiple layers of garments using consumer-level capturing hardware.
-To address this, we present a novel screenspace layer resolution method combined with physical simulation and Gaussian garments to enable realistic multilayer mix-and-match avatar dressing at interactive rates using low-cost hardware.
-As an offline process, we capture multiple static garments individually using only a single mobile camera on a static mannequin and then perform a dual reconstruction of Gaussians and simulation mesh.
-During runtime, these Gaussians are driven by a fast but simple physics simulator, whose output may contain inter-penetrations across garment layers.
-Our method fixes these in screenspace by rasterizing the simulation mesh from various camera views and culling the Gaussians that are skinned to unseen mesh triangles.
-We show the effectiveness of our approach by demonstrating mix-and-match dressing results at interactive rates using short-sleeves, long-sleeves, a fur vest, and a singlet. 
-Additionally, we showcase a webcam-based interactive try-on application to further illustrate the capabilities of our system.</p>
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>, Shen, I., Xie, H., Zhu, B., Sueda, S. &amp; Igarashi, T., <i>Graphics Interface</i>, 2025</li>
+              <li>&#127942; Best Graphics Paper Award</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/garments.png" class="card-img">
@@ -116,10 +110,10 @@ Additionally, we showcase a webcam-based interactive try-on application to furth
         <a class="card card-h" href="https://arxiv.org/pdf/2402.10457">
           <div class="card-body">
             <h3>Learning-Augmented Search Data Structures</h3>
-            <p>ICLR 2025</p>
-            <p>We study the integration of machine learning advice to improve upon traditional data structure designed for efficient search queries. Although there has been recent effort in improving the performance of binary search trees using machine learning advice, the resulting constructions nevertheless suffer from inherent weaknesses of binary search trees, such as complexity of maintaining balance across multiple updates and the inability to handle partially-ordered or high-dimensional datasets. For these reasons, we focus on skip lists and KD trees in this work. 
-Given access to a possibly erroneous oracle that outputs estimated fractional frequencies for search queries on a set of items, we construct skip lists and KD trees that provably provides the optimal expected search time, within nearly a factor of two. In fact, our learning-augmented skip lists and KD trees are still optimal up to a constant factor, even if the oracle is only accurate within a constant factor. We show that if the search queries follow the ubiquitous Zipfian distribution, then the expected search time for an item by our data structures is only a constant, independent of the total number n of items, i.e., O(1), whereas a traditional skip list or KD tree will have an expected search time of O(log n). We also demonstrate robustness by showing that our data structures achieves an expected search time that is within a constant factor of an oblivious skip list/KD tree construction even when the predictions are arbitrarily incorrect. Finally, we empirically show that our learning-augmented search data structures outperforms their corresponding traditional analogs on both synthetic and real-world datasets.</p>
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>*, Fu, C.*, Nguyen, B.*, Seo, J.*, Zhou, S., <i>ICLR</i>, 2025</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/lasds_fig.png" class="card-img">
@@ -131,10 +125,10 @@ Given access to a possibly erroneous oracle that outputs estimated fractional fr
         <a class="card card-h" href="https://dl.acm.org/doi/10.1145/3610548.3618225">
           <div class="card-body">
             <h3>Neural Collision Fields for Triangle Primitives</h3>
-            <p>SIGGRAPH Asia 2023</p>
-            <p>We present neural collision fields as an alternative to contact point sampling in physics simulations. Our approach is built on top of a novel smoothed integral formulation for the contact surface patches between two triangle meshes. By reformulating collisions as an integral, we avoid issues of sampling common to many collision-handling algorithms. Because the resulting integral is difficult to evaluate numerically, we store its solution in an integrated neural collision field — a 6D neural field in the space of triangle pair vertex coordinates. Our network generalizes well to new triangle meshes without retraining. We demonstrate the effectiveness of our method by implementing it as a constraint in a position-based dynamics framework and show that our neural formulation successfully handles collisions in practical simulations involving both volumetric and thin-shell geometries.
-            </p>   
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>, Modi, V., Sueda, S. &amp; Levin, D., <i>ACM SIGGRAPH Asia Conference Proceedings</i>, 2023</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/tri_prim.jpg" class="card-img">
@@ -146,10 +140,11 @@ Given access to a possibly erroneous oracle that outputs estimated fractional fr
         <a class="card card-h" href="https://link.springer.com/chapter/10.1007/978-3-031-61816-1_6">
           <div class="card-body">
             <h3>NBD-Tree: Neural Bounded Deformation Tree for Collision Culling of Deformable Objects</h3>
-            <p>SDSC 2023 (Best Paper Award)</p>
-            <p>We propose a novel machine learning-based approach for accelerating the broad phase of 3D collision detection for deformable objects. Our method, which we call the neural bounded deformation tree (NBD-Tree), allows us to cull away primitives for full-space deformable objects quickly. Unlike its classic, non-neural counterpart, the NBD-Tree is not limited to deformable objects that are constrained to work within the space of low-dimensional deformation modes, and instead works with an arbitrary set of deformations. With our approach, when the shape of the object changes at runtime, we use the low-dimensional deformation modes of the object only as the input to a neural network that calculates the necessary updates to the NBD-Tree. To further improve efficiency, we approximate these low-dimensional modes efficiently through clustering, which allows us to avoid going through every vertex of the mesh. We then rely on the network to overcome the potential errors stemming from these approximations. The NBD-Tree paves the way for interactive collision culling of large-scale, full-space deformable objects.
-            </p>  
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>, Witemeyer, B., Xiong, Z., Levin, D. &amp; Sueda, S., <i>Southwest Data Science Conference</i>, 2023</li>
+              <li>&#127942; Best Paper Award</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/nbd.webp" class="card-img">
@@ -161,19 +156,10 @@ Given access to a possibly erroneous oracle that outputs estimated fractional fr
         <a class="card card-h" href="https://arxiv.org/pdf/2202.02309">
           <div class="card-body">
             <h3>Neural Collision Detection for Deformable Objects</h3>
-            <p>Arxiv 2022</p>
-            <p>We propose a neural network-based approach for collision detection with
-                deformable objects. Unlike previous approaches based on bounding volume
-                hierarchies, our neural approach does not require an update of the spatial
-                data structure when the object deforms. Our network is trained on the
-                reduced degrees of freedom of the object, so that we can use the same
-                network to query for collisions even when the object deforms. Our approach
-                is simple to use and implement, and it can readily be employed on the
-                GPU. We demonstrate our approach with two concrete examples: a haptics
-                application with a finite element mesh, and cloth simulation with a skinned
-                character.
-            </p>   
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>, Witemeyer, B., Xiong, Z., Levin, D. &amp; Sueda, S., <i>arXiv:2202.02309</i>, 2022</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/sdf_coll.jpg" class="card-img">
@@ -186,20 +172,10 @@ Given access to a possibly erroneous oracle that outputs estimated fractional fr
           <div class="card-body">
             <h3>Packing Edge-Disjoint T<sub>2</sub> Trees in Constrained Bipartite 
                 Graphs</h3>
-                <p>CSCSU 2021</p>
-            <p> Packing problems are among the most widely studied 
-                problems in computer science. Some examples of packing problems include the knapsack and bin packing problems. Packing problems on graphs ask how many disjoint 
-                subgraphs of a certain type can be found within a given 
-                graph, given some constraints.
-                 We introduce a new type of spanning tree on nearly balanced bipartite graphs called a T2 tree, and examine how 
-                many edge disjoint T<sub>2</sub> trees can be found in a given graph. 
-                We use a matrix representation of these graphs in order to 
-                take advantage of graph isomorphisms, and later briefly 
-                explore extensions of the definition of a T<sub>2</sub> tree.
-                 We present our original work in proving bounds for the 
-                number of edge-disjoint T<sub>2</sub> trees that we can pack in various graphs.
-            </p>  
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b> &amp; Migler, T., <i>Computer Science Conference for CSU Undergraduates</i>, 2021</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/t2wide.png" class="card-img">
@@ -211,13 +187,10 @@ Given access to a possibly erroneous oracle that outputs estimated fractional fr
         <a class="card card-h" href="assets/docs/Curves__Conics_and_Cryptography__Oh_My.pdf">
           <div class="card-body">
             <h3>Pell Conics</h3>
-            <p>GS MAA 2019</p>
-            <p>As an undergraduate, I completed summer research studying the algebraic structure of a class of conic sections called Pell
-                conics. We studied the group structure on Pell conics, and learned about how they relate to elliptic curves. Follow this
-                link to see the poster my partner and I presented at the Golden Section Mathematical Association of America Undergraduate 
-                Poster Session in 2019.
-            </p>  
-            <div style="text-align: right; width: 95%;">&#8594;</div>
+            <ul>
+              <li><b>Zesch, R.</b>  &amp; Pion, J., <i>MAA Golden Section Undergraduate Poster Session</i>, 2019</li>
+            </ul>
+            
           </div>
           <div class="card-img-holder card-img-holder-50">
             <img src="assets/img/conic.png" class="card-img">
