@@ -131,7 +131,16 @@
     border-radius: 25px;
     border: 0;
   }
-
+ .card-bio {
+     border-radius: 25px;
+     margin-bottom: 30px;
+ }
+ .card-bio-grad {
+     background-color: #97B9BD;
+     background-image: linear-gradient(to bottom, #ABD2D6 0%, #ABD2D6 25%, #97B9BD 100%);
+     border-radius: 0 0 25px 25px;
+ }
+ 
  #header-item {
     background-color: #ABD2D6; /* For browsers that do not support gradients */
     background-image: linear-gradient(#789396, #ABD2D6);
