@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ryan Zesch - Cats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    .masonry-container {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .masonry-item {
+      position: absolute;
+      width: calc(50% - 8px);
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .masonry-item {
+        position: relative;
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 768px) and (min-width: 576px) {
+      .masonry-item {
+        max-width: 100% !important;
+      }
+    }
+
+    .masonry-item .card-img {
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #catModal .modal-dialog {
+      max-width: none;
+      width: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    #catModal .modal-content {
+      background-color: transparent;
+      border: none;
+      width: auto;
+    }
+
+    #catModal .modal-content img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 25px;
+    }
+  </style>
+  <script>
+    $(function () {
+      $("#header").load("partials/header.html");
+      $("#footer").load("partials/footer.html");
+    });
+
+    const catPhotos = [
+      "cat_1.jpg", "cat_2.jpg", "cat_3.jpg", "cat_4.jpg", "cat_5.jpg",
+      "cat_6.jpg", "cat_7.jpg", "cat_8.jpg", "cat_9.jpg", "cat_10.jpg",
+      "cat_11.jpg", "cat_12.jpg", "cat_13.jpg", "cat_14.jpg", "cat_15.jpg",
+      "cat_16.jpg", "cat_17.jpg", "cat_18.jpg", "cat_19.jpg", "cat_20.jpg",
+      "cat_21.jpg", "cat_22.jpg", "cat_23.jpg", "cat_24.jpg", "cat_25.jpg",
+      "cat_26.jpg", "cat_27.jpg"
+    ];
+    const catCount = 16;
+
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function masonryLayout() {
+      const container = document.getElementById("masonry-container");
+      const items = Array.from(container.children);
+
+      if (window.innerWidth <= 768) {
+        items.forEach((item) => {
+          item.style.position = "relative";
+          item.style.top = "";
+          item.style.left = "";
+          item.style.width = "100%";
+        });
+        container.style.height = "";
+        return;
+      }
+
+      const columnCount = 2;
+      const columnHeights = Array(columnCount).fill(0);
+      const columnWidth = container.offsetWidth / columnCount;
+
+      items.forEach((item) => {
+        const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+
+        item.style.position = "absolute";
+        item.style.top = `${columnHeights[shortestColumnIndex]}px`;
+        item.style.left = `${shortestColumnIndex * columnWidth}px`;
+        item.style.width = `${columnWidth - 16}px`;
+
+        columnHeights[shortestColumnIndex] += item.offsetHeight + 16;
+      });
+
+      container.style.position = "relative";
+      container.style.height = `${Math.max(...columnHeights)}px`;
+    }
+
+    function loadImage(name) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.className = "card-img";
+        img.onload = () => resolve(img);
+        img.src = "assets/cats/" + name;
+      });
+    }
+
+    async function renderCats() {
+      const container = document.getElementById("masonry-container");
+      const selected = shuffle(catPhotos).slice(0, catCount);
+
+      for (const name of selected) {
+        const img = await loadImage(name);
+        const item = document.createElement("div");
+        item.className = "masonry-item col-sm-6 block";
+        const card = document.createElement("div");
+        card.className = "card";
+        card.appendChild(img);
+        item.appendChild(card);
+        container.appendChild(item);
+        img.addEventListener("click", () => {
+          document.getElementById("catModalImg").src = img.src;
+          $("#catModal").modal("show");
+        });
+        masonryLayout();
+      }
+    }
+
+    window.addEventListener("load", renderCats);
+    window.addEventListener("resize", masonryLayout);
+  </script>
+</head>
+<body class="bg">
+    <div id="header"></div>
+
+    <div class="container">
+
+    <h1 class="display-3">:3</h1>
+
+    <div id="masonry-container" class="masonry-container">
+    </div>
+    </div>
+
+    <div class="modal fade" id="catModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <img id="catModalImg" src="">
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
